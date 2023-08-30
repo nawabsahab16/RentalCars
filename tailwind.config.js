@@ -18,6 +18,15 @@ module.exports = {
       xl: '1300px',
     },
     extend: {
+      colors: {
+        primary : '#1018280',
+        secondary : '#667085',
+        accent : {
+          DEFAULT : '#ed1d24',
+          hover: '#dd242a'
+        },
+        body: '#dedede',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
