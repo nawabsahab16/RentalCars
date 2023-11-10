@@ -1,25 +1,18 @@
 'use client';
 
 import { useContext , useEffect , useState } from "react";
-
 // next Image 
 import Image from "next/image";
-
 // react scroll 
 import { Link } from "react-scroll";
-
 // components 
 import SearchMobile from "./SearchMobile";
-
 // media query hook
 import { useMediaQuery } from "react-responsive";
-
 // icons 
 import { BiMenuAltRight , BiX} from 'react-icons/bi';
-
 // Search context 
 import { SearchContext } from "../context/search";
-
 
 export default function Header() {
   const { setSearchActive } = useContext(SearchContext);
@@ -30,7 +23,6 @@ export default function Header() {
     const desktopMode = useMediaQuery({
       query: '(min-width : 1300px)',
     });
-
     useEffect(() => {
       const handleScroll = ()=> {
         // header 
@@ -39,28 +31,21 @@ export default function Header() {
         }else {
           setHeader(false);
         }
-
-
-
       };
-      
       // adding event listener 
       window.addEventListener('scroll', handleScroll);
       // removing event listener 
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
-
       // search
       if(window.scrollY > 800) {
         setSearchActive(true);
       }else {
         setSearchActive(false);
       }
-
     });
-     
-  
+
     return (
       <header 
         className= {`${
@@ -110,7 +95,6 @@ export default function Header() {
                   >
                     Home
                   </Link>
-
 
                   <Link 
                   className='cursor-pointer'
